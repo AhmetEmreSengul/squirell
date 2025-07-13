@@ -8,9 +8,13 @@ const __dirname = path.dirname(__filename);
 console.log("🚀 Starting deployment process...");
 
 try {
-  // Build the frontend
+  // Build the frontend with increased memory limit
   console.log("📦 Building frontend...");
-  execSync("npm run build", { stdio: "inherit", cwd: __dirname });
+  execSync("node --max-old-space-size=4096 ./node_modules/.bin/vite build", { 
+    stdio: "inherit", 
+    cwd: __dirname,
+    env: { ...process.env, NODE_OPTIONS: '--max-old-space-size=4096' }
+  });
 
   // Install backend dependencies
   console.log("📦 Installing backend dependencies...");

@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node --max-old-space-size=4096 ./node_modules/.bin/vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite preview --host 0.0.0.0 --port $PORT",
     "build:all": "npm run build && cd backend && npm install",
     "start:combined": "cd backend && npm start",
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.js",
+    "deploy:simple": "node deploy-simple.js"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
