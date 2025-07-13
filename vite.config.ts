@@ -37,13 +37,7 @@ export default defineConfig({
       },
     },
     // Optimize for production
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: "esbuild",
   },
   // Reduce memory usage
   optimizeDeps: {

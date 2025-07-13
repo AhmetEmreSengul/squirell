@@ -21,7 +21,7 @@ try {
   execSync("npx vite build --config vite.config.prod.ts", {
     stdio: "inherit",
     cwd: __dirname,
-    env: { ...process.env, NODE_OPTIONS: "--max-old-space-size=2048" },
+    env: { ...process.env, NODE_OPTIONS: "--max-old-space-size=4096" },
   });
 
   // Step 3: Install backend dependencies

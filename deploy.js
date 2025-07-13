@@ -10,7 +10,7 @@ console.log("🚀 Starting deployment process...");
 try {
   // Build the frontend with increased memory limit
   console.log("📦 Building frontend...");
-  execSync("node --max-old-space-size=4096 ./node_modules/.bin/vite build", { 
+  execSync("npx vite build", { 
     stdio: "inherit", 
     cwd: __dirname,
     env: { ...process.env, NODE_OPTIONS: '--max-old-space-size=4096' }
