@@ -5,6 +5,8 @@ axios.defaults.baseURL =
   process.env.NODE_ENV === "production" ? "/api" : "http://localhost:5000/api";
 
 // Add request interceptor to include auth token
+
+// Add request interceptor to include auth token
 axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
