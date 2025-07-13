@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // Set base URL for all API calls
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:5000/api";
 
 // Add request interceptor to include auth token
 axios.interceptors.request.use(

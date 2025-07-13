@@ -22,7 +22,7 @@ interface AuthContextType {
   ) => Promise<void>;
   logout: () => void;
   checkAuth: () => Promise<void>;
-  forgotPassword: (email: string) => Promise<void>;
+  forgotPassword: (email: string) => Promise<any>;
   resetPassword: (token: string, password: string) => Promise<void>;
 }
 
@@ -82,7 +82,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const forgotPassword = async (email: string) => {
-    return await axios.post("/auth/forgot-password", { email });
+    const response = await axios.post("/auth/forgot-password", { email });
+    return response;
   };
 
   const resetPassword = async (token: string, password: string) => {
