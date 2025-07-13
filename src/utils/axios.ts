@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Set base URL for all API calls
 const isProduction =
-  import.meta.env.PROD || process.env.NODE_ENV === "production";
+  import.meta.env.PROD || window.location.hostname !== "localhost";
 const baseURL = isProduction ? "/api" : "http://localhost:5000/api";
 
 axios.defaults.baseURL = baseURL;
@@ -10,7 +10,7 @@ axios.defaults.baseURL = baseURL;
 console.log("🔗 Axios base URL:", axios.defaults.baseURL);
 console.log("🌍 Environment:", isProduction ? "production" : "development");
 console.log("🔧 import.meta.env.PROD:", import.meta.env.PROD);
-console.log("🔧 process.env.NODE_ENV:", process.env.NODE_ENV);
+console.log("🔧 Hostname:", window.location.hostname);
 
 // Add request interceptor to include auth token
 axios.interceptors.request.use(
