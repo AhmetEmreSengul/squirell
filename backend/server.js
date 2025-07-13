@@ -76,7 +76,9 @@ app.use("/api/", limiter);
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.NODE_ENV === "production" 
+      ? [process.env.FRONTEND_URL, "https://squirell.onrender.com"] 
+      : "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -107,7 +109,10 @@ app.use(passport.session());
 
 // Explicit OPTIONS handler for CORS preflight on /uploads/*
 app.options("/uploads/*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  const origin = process.env.NODE_ENV === "production" 
+    ? (process.env.FRONTEND_URL || "https://squirell.onrender.com")
+    : "http://localhost:5173";
+  res.header("Access-Control-Allow-Origin", origin);
   res.header("Access-Control-Allow-Methods", "GET,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.header("Cross-Origin-Resource-Policy", "cross-origin");
@@ -116,7 +121,10 @@ app.options("/uploads/*", (req, res) => {
 
 // Allow CORS for static files
 app.use("/uploads", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  const origin = process.env.NODE_ENV === "production" 
+    ? (process.env.FRONTEND_URL || "https://squirell.onrender.com")
+    : "http://localhost:5173";
+  res.header("Access-Control-Allow-Origin", origin);
   res.header("Access-Control-Allow-Methods", "GET,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.header("Cross-Origin-Resource-Policy", "cross-origin");
@@ -193,10 +201,11 @@ const connectDB = async () => {
 const startServer = async () => {
   await connectDB();
 
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server running on port ${PORT}`);
     console.log(`📱 Environment: ${process.env.NODE_ENV || "development"}`);
-    console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
+    console.log(`🔗 Health check: http://0.0.0.0:${PORT}/api/health`);
+    console.log(`🌐 Server bound to 0.0.0.0:${PORT}`);
   });
 };
 

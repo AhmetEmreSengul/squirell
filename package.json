@@ -14,7 +14,8 @@
     "deploy": "node deploy.js",
     "deploy:simple": "node deploy-simple.js",
     "deploy:robust": "node deploy-robust.js",
-    "start:server": "node start-server.js"
+    "start:server": "node start-server.js",
+    "render": "node render-deploy.js"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
