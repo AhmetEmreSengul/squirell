@@ -140,6 +140,14 @@ app.use("/api/reviews", reviewRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 
+// Serve static files from the React build
+app.use(express.static(path.join(__dirname, "../dist")));
+
+// Catch-all handler: send back React's index.html file for any non-API routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
+});
+
 // Error handling middleware
 app.use(notFound);
 app.use(errorHandler);
