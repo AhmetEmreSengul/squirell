@@ -10,12 +10,7 @@
     "preview": "vite preview",
     "start": "vite preview --host 0.0.0.0 --port $PORT",
     "build:all": "npm run build && cd backend && npm install",
-    "start:combined": "cd backend && npm start",
-    "deploy": "node deploy.js",
-    "deploy:simple": "node deploy-simple.js",
-    "deploy:robust": "node deploy-robust.js",
-    "start:server": "node start-server.js",
-    "render": "node render-deploy.js"
+    "start:combined": "cd backend && npm start"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
