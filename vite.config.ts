@@ -17,6 +17,8 @@ export default defineConfig({
       process.env.NODE_ENV || "development"
     ),
   },
+  // Ensure static assets are properly handled
+  publicDir: "public",
   build: {
     // Reduce memory usage during build
     chunkSizeWarningLimit: 1000,

@@ -70,7 +70,7 @@ const SideBar = () => {
                     <div>
                       <img
                         className="rounded-lg"
-                        src="src/img/painting.png"
+                        src="/img/painting.png"
                         alt=""
                       />
                     </div>

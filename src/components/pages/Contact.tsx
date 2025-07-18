@@ -71,7 +71,7 @@ const Contact = () => {
             </span>
             <img
               className="ml-0 xl:ml-5 mt-10 h-[250px] md:h-[350px] xl:h-[450px] rounded-lg shadow-2xl w-full max-w-[450px] object-cover"
-              src="/src/img/partial.png"
+              src="/img/partial.png"
               alt=""
             />
           </div>
@@ -87,7 +87,7 @@ const Contact = () => {
           <div className="flex flex-col xl:flex-row items-center xl:items-start w-full mt-20">
             <img
               className="h-[200px] md:h-[250px] xl:h-[300px] rounded-lg mb-6 xl:mb-0 xl:mr-8 shadow-2xl w-full max-w-[300px] object-cover"
-              src="/src/img/painting.png"
+              src="/img/painting.png"
               alt=""
             />
             <div className="w-full">

@@ -11,6 +11,12 @@ if (result.error) {
   console.log("✅ .env file loaded successfully");
 }
 
+// Import cloudinary config AFTER dotenv so env vars are available
+import cloudinary from "./config/cloudinary.js";
+
+
+console.log("Cloudinary config at upload:", cloudinary.config());
+
 // Now import everything else after environment variables are loaded
 import express from "express";
 import mongoose from "mongoose";

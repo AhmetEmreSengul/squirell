@@ -78,7 +78,7 @@ const Navbar = () => {
                 <NavigationMenuContent className="text-nowrap">
                   <div className=" rounded shadow-lg">
                     <div className="">
-                      <img src="./src/img/painting.png" alt="" />
+                      <img src="/img/painting.png" alt="" />
                     </div>
                     <p className="text-lg">Explore, buy and sell products.</p>
                   </div>

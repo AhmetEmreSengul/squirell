@@ -81,8 +81,10 @@ const CreateProduct = () => {
           .map((error: any) => error.msg)
           .join(", ");
         setError(errorMessages);
+      } else if (err.response?.data?.message) {
+        setError(err.response.data.message); // Show backend error message
       } else {
-        setError(err.response?.data?.message || "Error creating product");
+        setError("Error creating product");
       }
     } finally {
       setLoading(false);

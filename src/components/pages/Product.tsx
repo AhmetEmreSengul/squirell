@@ -163,7 +163,7 @@ const Product = () => {
   const canPublish = isOwner && isDraft;
 
   const getImageUrl = (url: string) => {
-    if (!url) return "/src/img/landing.png";
+    if (!url) return "/img/landing.png";
     if (url.startsWith("/uploads/")) {
       return BACKEND_URL + url;
     }
@@ -223,7 +223,7 @@ const Product = () => {
               src={getImageUrl(product.images[0]?.url)}
               alt={product.title}
               onError={(e) => {
-                e.currentTarget.src = "/src/img/landing.png";
+                e.currentTarget.src = "/img/landing.png";
               }}
             />
           </div>

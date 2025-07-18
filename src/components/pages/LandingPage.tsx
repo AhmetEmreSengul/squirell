@@ -132,7 +132,7 @@ const LandingPage = () => {
               <div className="mockup-phone-display flex ">
                 <img
                   className="w-full h-full object-contain mx-auto"
-                  src="/src/img/landing.png"
+                  src="/img/landing.png"
                   alt="wallpaper"
                 />
               </div>

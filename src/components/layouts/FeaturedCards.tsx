@@ -80,7 +80,7 @@ const FeaturedCards = ({ product, onBookmarkChange }: FeaturedCardsProps) => {
             src={getImageUrl(product.images[0]?.url)}
             alt={product.title}
             onError={(e) => {
-              e.currentTarget.src = "./src/img/no-image.jpg";
+              e.currentTarget.src = "/img/no-image.jpg";
             }}
           />
           <div>
