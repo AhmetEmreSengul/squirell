@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CountUp from "./CountUp";
 import axios from "../../utils/axios";
 import { CiBookmark, CiBookmarkCheck } from "react-icons/ci";
-import { BACKEND_URL } from "../../config";
+import { API_BASE_URL } from "../../config";
 
 interface Product {
   _id: string;
@@ -66,7 +66,7 @@ const FeaturedCards = ({ product, onBookmarkChange }: FeaturedCardsProps) => {
   const getImageUrl = (url: string) => {
     if (!url) return "https://placehold.co/600x400";
     if (url.startsWith("/uploads/")) {
-      return BACKEND_URL + url;
+      return API_BASE_URL + url;
     }
     return url;
   };

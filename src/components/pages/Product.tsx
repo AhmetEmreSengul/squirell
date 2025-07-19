@@ -8,7 +8,7 @@ import { FaShare, FaGlobe, FaEdit, FaTrash } from "react-icons/fa";
 import { CiBookmark, CiBookmarkCheck } from "react-icons/ci";
 import axios from "../../utils/axios";
 import { useAuth } from "../../contexts/AuthContext";
-import { BACKEND_URL } from "../../config";
+import { API_BASE_URL } from "../../config";
 
 interface Product {
   _id: string;
@@ -165,7 +165,7 @@ const Product = () => {
   const getImageUrl = (url: string) => {
     if (!url) return "/img/landing.png";
     if (url.startsWith("/uploads/")) {
-      return BACKEND_URL + url;
+      return API_BASE_URL + url;
     }
     return url;
   };
