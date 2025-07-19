@@ -14,7 +14,6 @@ if (result.error) {
 // Import cloudinary config AFTER dotenv so env vars are available
 import cloudinary from "./config/cloudinary.js";
 
-
 console.log("Cloudinary config at upload:", cloudinary.config());
 
 // Now import everything else after environment variables are loaded
@@ -26,6 +25,7 @@ import compression from "compression";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import passport from "passport";
 
 // Import routes
@@ -116,6 +116,16 @@ app.use(
     secret: process.env.SESSION_SECRET || "fallback-secret",
     resave: false,
     saveUninitialized: false,
+    store:
+      process.env.NODE_ENV === "production"
+        ? MongoStore.create({
+            mongoUrl:
+              process.env.MONGODB_URI_PROD ||
+              process.env.MONGODB_URI ||
+              "mongodb://localhost:27017/squirell",
+            collectionName: "sessions",
+          })
+        : undefined, // Use default MemoryStore in development
     cookie: {
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
