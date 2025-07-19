@@ -569,7 +569,10 @@ router.get(
   (req, res) => {
     // Successful authentication, redirect to frontend with token
     const token = generateToken(req.user._id);
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5174";
+    const frontendUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://squirell.onrender.com"
+        : process.env.FRONTEND_URL || "http://localhost:5173";
     res.redirect(`${frontendUrl}/oauth-callback?token=${token}`);
   }
 );
@@ -589,7 +592,9 @@ router.post(
   (req, res) => {
     // Successful authentication, redirect to frontend with token
     const token = generateToken(req.user._id);
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5174";
+    const frontendUrl = process.env.NODE_ENV === "production"
+      ? "https://squirell.onrender.com"
+      : process.env.FRONTEND_URL || "http://localhost:5173";
     res.redirect(`${frontendUrl}/oauth-callback?token=${token}`);
   }
 );
