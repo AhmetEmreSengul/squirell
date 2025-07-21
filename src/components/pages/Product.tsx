@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import SideBar from "../layouts/SideBar";
 import { motion } from "framer-motion";
-import Footer from "../layouts/Footer";
 import { FaShare, FaGlobe, FaEdit, FaTrash } from "react-icons/fa";
 import { CiBookmark, CiBookmarkCheck } from "react-icons/ci";
 import axios from "../../utils/axios";

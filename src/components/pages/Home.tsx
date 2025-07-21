@@ -4,7 +4,6 @@ import SideBar from "../layouts/SideBar";
 import FeaturedCards from "../layouts/FeaturedCards";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Footer from "../layouts/Footer";
 import axios from "../../utils/axios";
 import SkeletonLayout from "../layouts/SkeletonLayout";
 
@@ -184,7 +183,7 @@ const Home = () => {
           </motion.div>
         )}
       </div>
-     {/*  <footer className="mt-20 w-full  ">
+      {/*  <footer className="mt-20 w-full  ">
         <Footer />
       </footer> */}
     </div>

@@ -9,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Footer from "../layouts/Footer";
 import { motion } from "framer-motion";
 import FeaturedCards from "../layouts/FeaturedCards";
 import axios from "../../utils/axios";
