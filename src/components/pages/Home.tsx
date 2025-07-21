@@ -184,9 +184,9 @@ const Home = () => {
           </motion.div>
         )}
       </div>
-      <footer className="mt-20 w-full  ">
+     {/*  <footer className="mt-20 w-full  ">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 };

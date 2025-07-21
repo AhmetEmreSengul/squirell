@@ -231,9 +231,9 @@ const Listings = () => {
           )}
         </div>
       </div>
-      <footer className="mt-20 w-full items-center  ">
+     {/*  <footer className="mt-20 w-full items-center  ">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 };

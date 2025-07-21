@@ -381,9 +381,9 @@ const Product = () => {
       </motion.div>
 
       <div className="w-full  mt-20">
-        <footer className="w-full items-center">
+       {/*  <footer className="w-full items-center">
           <Footer />
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
