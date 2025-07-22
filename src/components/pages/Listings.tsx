@@ -126,7 +126,7 @@ const Listings = () => {
         <div className="md:flex hidden w-screen left-0 fixed backdrop-blur-sm bg-black/15 z-50">
           <Navbar />
         </div>
-        <div className="mt-40 flex flex-row justify-end gap-3">
+        <div className="mt-40 flex flex-col items-center lg:flex-row lg:justify-end gap-3">
           <div>
             <input
               className="border-2 border-green-900 hover:border-green-600 transition rounded-lg  text-lg p-1"
@@ -188,7 +188,7 @@ const Listings = () => {
                 ))}
               </motion.div>
               {/* Pagination Bar */}
-              <div className="flex justify-center mt-10">
+              <div className="flex justify-center mt-10 mb-5">
                 <nav className="inline-flex justify-center gap-2">
                   <button
                     className="px-3 py-2 rounded-l bg-green-700 text-white disabled:bg-[#636363]"
@@ -230,7 +230,7 @@ const Listings = () => {
           )}
         </div>
       </div>
-     {/*  <footer className="mt-20 w-full items-center  ">
+      {/*  <footer className="mt-20 w-full items-center  ">
         <Footer />
       </footer> */}
     </div>

@@ -107,24 +107,26 @@ const Home = () => {
   }
 
   return (
-    <div className=" w-screen flex flex-col items-center">
+    <div className=" w-screen flex flex-col items-center overflow-hidden">
       <div className="flex md:hidden z-[100] fixed top-0 left-0 ">
         <SideBar />
       </div>
       <div className="md:flex hidden w-screen left-0 fixed backdrop-blur-sm bg-black/15 z-50">
         <Navbar />
       </div>
-      <div className="flex flex-col ">
-        <div className="flex justify-between items-center mt-40">
+      <div className="flex flex-col">
+        <div className="flex flex-col  items-center mt-40">
           <h1 className=" text-4xl">My Products</h1>
-          <button className="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md mt-5">
-            <Link to={"/create"}>Create Product</Link>
-          </button>
+          {myProducts.length !== 0 && (
+            <button className="bg-green-600 hover:bg-green-700 transition text-white px-4 py-2 rounded-md mt-5">
+              <Link to={"/create"}>Create Product</Link>
+            </button>
+          )}
         </div>
 
         <div className="flex lg:justify-end md:justify-start lg:mt-0 md:mt-5 sm:mt-5"></div>
         {myProducts.length === 0 ? (
-          <div className=" text-lg font-light">
+          <div className=" text-lg font-light mt-10">
             You don't have any products yet. Created products will be visible
             here.
             <p className="text-green-200 underline font-medium cursor-pointer">
@@ -151,7 +153,7 @@ const Home = () => {
         )}
       </div>
 
-      <div>
+      <div className="flex flex-col justify-center items-center">
         <div className={`text-4xl mt-40`}>Bookmarked Products</div>
         {bookmarked.length === 0 ? (
           <div className="text-lg font-light flex flex-col">

@@ -99,7 +99,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden ">
       <div className="flex md:hidden z-[50] fixed top-0 left-0  ">
         <SideBar />
       </div>
@@ -114,7 +114,7 @@ const LandingPage = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-3xl w-[80%] md:text-7xl md:w-full   mb-5">
+            <h1 className="text-3xl w-[80%] md:text-7xl md:w-full mb-5">
               Start Earning The Easiest Way With Squirell!
             </h1>
             <p className="text-xl w-[80%] md:w-full mt-5 text-center">
@@ -127,11 +127,11 @@ const LandingPage = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <div className="mockup-phone h-[800px] mt-10 bg-white flex flex-col items-center">
-              <div className="mockup-phone-camera"></div>
+            <div className="mockup-phone h-[600px] w-[300px]  lg:h-[800px] lg:w-[400px]  mt-10 bg-white flex flex-col items-center">
+              <div className="mockup-phone-camera w-[100px] lg:w-[130px]"></div>
               <div className="mockup-phone-display flex ">
                 <img
-                  className="w-full h-full object-contain mx-auto"
+                  className=" object-contain mx-auto"
                   src="/img/landing.png"
                   alt="wallpaper"
                 />
@@ -207,7 +207,7 @@ const LandingPage = () => {
               </Link>
             </motion.div>
           )}
-          <div className="mt-20 xl:w-250 lg:w-200 md:w-150 sm:w-100 flex flex-col items-center gap-3">
+          <div className="mt-20 xl:w-250 lg:w-200 md:w-150 sm:w-100 w-80 flex flex-col items-center gap-3">
             <h1 className="text-4xl mb-10">Frequently Asked Questions</h1>
             <div className="collapse bg-[#333] border border-base-300">
               <input type="radio" name="my-accordion-1" defaultChecked />
