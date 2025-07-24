@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="p-5 lg:p-0">
       <div className="flex md:hidden z-[50] fixed top-0 left-0  ">
         <SideBar />
       </div>
