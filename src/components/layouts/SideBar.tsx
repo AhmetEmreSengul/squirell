@@ -23,7 +23,7 @@ const SideBar = () => {
   return (
     <div
       onClick={() => setIsOpen(isopen ? false : true)}
-      className="w-screen h-screen"
+      className={`${isopen ? "w-screen h-screen" : ""}`}
     >
       <button
         className="text-3xl text-[#adadad] fixed top-0 left-0"
