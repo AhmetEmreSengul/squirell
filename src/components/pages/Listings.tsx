@@ -120,7 +120,7 @@ const Listings = () => {
   return (
     <div className="flex flex-col relative min-h-full w-screen items-center justify-between">
       <div>
-        <div className="flex md:hidden z-[50] fixed top-0 left-0  ">
+        <div className="flex md:hidden z-[50] fixed top-0 left-0 ">
           <SideBar />
         </div>
         <div className="md:flex hidden w-screen left-0 fixed backdrop-blur-sm bg-black/15 z-50">

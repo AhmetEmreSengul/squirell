@@ -21,7 +21,10 @@ const SideBar = () => {
   };
 
   return (
-    <div>
+    <div
+      onClick={() => setIsOpen(isopen ? false : true)}
+      className="w-screen h-screen"
+    >
       <button
         className="text-3xl text-[#adadad] fixed top-0 left-0"
         onClick={() => setIsOpen(!isopen)}
@@ -35,7 +38,7 @@ const SideBar = () => {
             animate={{ x: 0 }}
             exit={{ x: -300 }}
             transition={{ type: "spring", stiffness: 400, damping: 23 }}
-            className="fixed top-0 left-0 w-60 bg-[#3333339f] backdrop-blur-sm h-screen  items-center flex-col flex text-center border-r"
+            className="fixed top-0 left-0 w-60  bg-[#3333339f] backdrop-blur-sm h-screen  items-center flex-col flex text-center border-r"
           >
             <div className="flex p-2 flex-col text-green-900">
               <Link
