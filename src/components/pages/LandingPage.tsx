@@ -228,7 +228,7 @@ const LandingPage = () => {
                 A portion (or fraction) of a company stock that is less than one
                 full share. Unlike traditional whole share trading, fractional
                 shares allow people to make investments based upon a specific
-                dollar amount, instead of an individual stock's price.asdasd
+                dollar amount, instead of an individual stock's price.
               </div>
             </div>
             <div className="collapse bg-[#333] border border-base-300">
